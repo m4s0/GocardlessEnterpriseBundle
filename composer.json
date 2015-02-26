@@ -1,0 +1,28 @@
+{
+  "name": "lendable/gocardless-enterprise-bundle",
+  "type": "symfony-bundle",
+  "description": "integration of gocardless enterprise library into symfony",
+  "keywords": [
+    "gocardless",
+    "Symfony2"
+  ],
+  "homepage": "https://github.com/Lendable/GocardlessEnterpriseBundle.git",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "The Lendable Team",
+      "email": "contact@lendable.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.2",
+    "gocardless/enterprise": "*",
+    "symfony/framework-bundle": "~2.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "Gocardless\\EnterpriseBundle": ""
+    }
+  },
+  "target-dir": "Gocardless/EnterpriseBundle"
+}
