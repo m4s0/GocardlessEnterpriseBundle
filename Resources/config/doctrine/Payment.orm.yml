@@ -15,6 +15,9 @@ Gocardless\EnterpriseBundle\Entity\Payment:
             nullable: true
         charge_date:
             type: string
+        metadata:
+            type: simple_array
+            nullable: true
         status:
             type: string
         created_at:
