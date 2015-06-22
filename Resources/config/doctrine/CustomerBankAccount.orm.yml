@@ -8,8 +8,9 @@ Gocardless\EnterpriseBundle\Entity\CustomerBankAccount:
     fields:
         account_number:
             type: string
-        sort_code:
+        branch_code:
             type: string
+            name: sort_code
         country_code:
             type: string
         account_holder_name:
