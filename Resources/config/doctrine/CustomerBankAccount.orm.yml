@@ -10,7 +10,6 @@ Gocardless\EnterpriseBundle\Entity\CustomerBankAccount:
             type: string
         branch_code:
             type: string
-            name: sort_code
         country_code:
             type: string
         account_holder_name:
