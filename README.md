@@ -17,7 +17,7 @@ You will then have a service available to you called gocardless_enterprise.clien
 This service includes a method for validating the signature of any webhooks received from GoCardless (assuming you configured the webhook_secret properly).
 
 The following Models will be mapped to your Database automatically:
-Customer
-CustomerBankAccount
-Mandate
-Payment
+* Customer
+* CustomerBankAccount
+* Mandate
+* Payment
