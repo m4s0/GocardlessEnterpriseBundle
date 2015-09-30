@@ -17,7 +17,6 @@ parameters:
 ```
     new Misd\GuzzleBundle\MisdGuzzleBundle(),
     new Gocardless\EnterpriseBundle\GocardlessEnterpriseBundle(),
-    new Ananas\GocardlessBundle\GocardlessBundle(),
 ```            
 
 You will then have a service available to you called gocardless_enterprise.client with methods for interacting with all API endpoints.
