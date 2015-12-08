@@ -25,3 +25,4 @@ Gocardless\EnterpriseBundle\Entity\Payment:
     manyToOne:
         mandate:
             targetEntity: Mandate
+            cascade: ["persist"]
