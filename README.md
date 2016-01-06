@@ -31,4 +31,5 @@ The following Models will be mapped to your Database automatically:
 Documentation and help can be found here:
 
 https://developer.gocardless.com/pro/2015-07-06 (for versioned docs)
+
 https://help.gocardless.com (for GoCardless support contact details)
