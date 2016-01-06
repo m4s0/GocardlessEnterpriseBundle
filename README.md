@@ -8,7 +8,7 @@ Integration of the Gocardless enterprise library into Symfony2.
 parameters:
     gocardless_enterprise:
         baseUrl: 'https://api.gocardless.com/'
-        gocardlessVersion: '2015-04-29'
+        gocardlessVersion: '2015-07-06'
         webhook_secret: XXXXXXXXXXXXXXXXXXXXXX
         creditorId: XXXXXXXXXXXXXX
         token: XXXXXXXXXXXXXXXXXXXXXXXXXXX
