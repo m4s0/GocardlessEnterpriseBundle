@@ -38,7 +38,8 @@ class CustomerBankAccount extends \GoCardless\Enterprise\Model\CustomerBankAccou
     {
         parent::fromArray($data);
         if (array_key_exists('account_number_ending', $data) && !$this->getAccountNumber()) {
-            $this->setAccountNumber($data['account_number_ending']);
+            $prefix = str_repeat('*', max(0, 8 - strlen($data['account_number_ending'])));
+            $this->setAccountNumber($prefix.$data['account_number_ending']);
         }
         $this->setCreatedAt(new \DateTime($this->getCreatedAt()));
     }
