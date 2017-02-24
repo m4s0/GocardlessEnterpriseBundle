@@ -16,6 +16,8 @@ Gocardless\EnterpriseBundle\Entity\Mandate:
             type: string
         created_at:
             type: datetime
+        updated:
+            type: datetime
     manyToOne:
         customerBankAccount:
             targetEntity: CustomerBankAccount

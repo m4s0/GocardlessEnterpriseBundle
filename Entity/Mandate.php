@@ -14,7 +14,6 @@ class Mandate extends \GoCardless\Enterprise\Model\Mandate
 {
     /**
      * @var \DateTime
-     * @ORM\Column(type="datetime")
      * @Gedmo\Timestampable(on="update")
      */
     protected $updated;
