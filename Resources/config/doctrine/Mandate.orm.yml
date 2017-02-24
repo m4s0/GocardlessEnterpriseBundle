@@ -18,6 +18,9 @@ Gocardless\EnterpriseBundle\Entity\Mandate:
             type: datetime
         updated:
             type: datetime
+            gedmo:
+                timestampable:
+                    on: update
     manyToOne:
         customerBankAccount:
             targetEntity: CustomerBankAccount
