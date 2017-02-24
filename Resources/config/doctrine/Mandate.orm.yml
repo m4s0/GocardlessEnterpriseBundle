@@ -18,6 +18,7 @@ Gocardless\EnterpriseBundle\Entity\Mandate:
             type: datetime
         updated:
             type: datetime
+            nullable: true
             gedmo:
                 timestampable:
                     on: update
