@@ -8,8 +8,33 @@
 
 namespace Gocardless\EnterpriseBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+
 class Mandate extends \GoCardless\Enterprise\Model\Mandate
 {
+    /**
+     * @var \DateTime
+     * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="update")
+     */
+    protected $updated;
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * @param \DateTime $updated
+     */
+    public function setUpdated(\DateTime $updated)
+    {
+        $this->updated = $updated;
+    }
+
     /**
      * @var string
      */
