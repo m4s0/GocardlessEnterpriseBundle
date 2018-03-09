@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Lendable/GocardlessEnterpriseBundle.svg)](https://travis-ci.org/Lendable/GocardlessEnterpriseBundle)
+
 Gocardless Enterprise Bundle
 ============================
 
