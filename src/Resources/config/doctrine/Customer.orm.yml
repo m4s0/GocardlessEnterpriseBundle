@@ -1,4 +1,4 @@
-Gocardless\EnterpriseBundle\Entity\Customer:
+Lendable\GoCardlessEnterpriseBundle\Entity\Customer:
     type: entity
     table: gocardless_customer
     id:

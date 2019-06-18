@@ -78,3 +78,7 @@ script:
     else
       composer check-security;
     fi;
+  - composer run-tests-with-clover
+
+after_script:
+  - bin/php-coveralls -v

@@ -1,4 +1,4 @@
-Gocardless\EnterpriseBundle\Entity\Mandate:
+Lendable\GoCardlessEnterpriseBundle\Entity\Mandate:
     type: entity
     table: gocardless_mandate
     id:

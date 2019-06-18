@@ -14,12 +14,12 @@
   
   "autoload": {
     "psr-4": {
-      "Gocardless\\EnterpriseBundle\\": "src/"
+      "Lendable\\GoCardlessEnterpriseBundle\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Gocardless\\EnterpriseBundle\\Tests\\": "tests/"
+      "Lendable\\GoCardlessEnterpriseBundle\\Tests\\": "tests/"
     }
   },
   

@@ -19,9 +19,10 @@ parameters:
         creditorId: XXXXXXXXXXXXXX
         token: XXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
-* Add GocardlessEnterpriseBundle to your AppKernel.php
+
+* Add GoCardlessEnterpriseBundle to your AppKernel.php
 ``` php
-    new Gocardless\EnterpriseBundle\GocardlessEnterpriseBundle(),
+new Lendable\GoCardlessEnterpriseBundle\GoCardlessEnterpriseBundle(),
 ```            
 
 You will then have a service available to you called `gocardless_enterprise.client` with methods for interacting with GoCardless Enterprise API endpoints.
