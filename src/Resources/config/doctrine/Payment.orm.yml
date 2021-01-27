@@ -22,6 +22,9 @@ Lendable\GoCardlessEnterpriseBundle\Entity\Payment:
             type: string
         created_at:
             type: datetime
+        reference:
+            type: string
+            nullable: true
     manyToOne:
         mandate:
             targetEntity: Mandate
