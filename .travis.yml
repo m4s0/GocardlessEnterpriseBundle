@@ -10,12 +10,13 @@ php:
   - 7.1.21 # see https://github.com/liamja/cex/commit/bb5906b373dca1f5163a265925f57bddc446b9cd
   - 7.2
   - 7.3
-  - nightly
+  - 7.4
 
 env:
   global:
-    - LATEST_PHP_VERSION="7.3"
+    - OLD_PHP_VERSION="7.2"
     - MAINTAINED_SYMFONY_VERSIONS="2.8.*|3.4.*|4.2.*|4.3.*"
+    - XDEBUG_MODE="coverage"
   matrix:
     - SYMFONY_VERSION="2.8.*"
     - SYMFONY_VERSION="3.4.*"
@@ -29,7 +30,6 @@ env:
 matrix:
   fast_finish: true
   allow_failures:
-    - php: nightly
     - env: DEPENDENCIES="beta"
     - env: DEPENDENCIES="low"
     - env: SYMFONY_VERSION="dev-master"
@@ -40,9 +40,16 @@ before_install:
       composer config github-oauth.github.com ${GH_TOKEN};
     fi;
   - mkdir -p build/logs
+  - |
+    version() {
+      echo "$@" | gawk -F. '{ printf("%03d%03d%03d\n", $1,$2,$3); }';
+    }
+    export -f version
 
 install:
-  - if [ "$(phpenv version-name)" != "$LATEST_PHP_VERSION" ]; then
+  - wget https://get.symfony.com/cli/installer -O - | bash
+  - export PATH="$HOME/.symfony/bin:$PATH"
+  - if [ "$(version "$(phpenv version-name)")" -lt "$(version "$OLD_PHP_VERSION")" ]; then
       composer remove friendsofphp/php-cs-fixer phpstan/phpstan-phpunit phpstan/phpstan --dev;
     fi
   - if [ "$DEPENDENCIES" = "beta" ]; then
@@ -58,26 +65,22 @@ install:
     fi;
 
 script:
-  - if [ "$(phpenv version-name)" != "$LATEST_PHP_VERSION" ]; then
+  - if [ "$(version "$(phpenv version-name)")" -lt "$(version "$OLD_PHP_VERSION")" ]; then
       echo "File validation is skipped for older PHP versions";
     else
       composer validate-files;
     fi;
-  - if [ "$(phpenv version-name)" != "$LATEST_PHP_VERSION" ]; then
+  - if [ "$(version "$(phpenv version-name)")" -lt "$(version "$OLD_PHP_VERSION")" ]; then
       echo "Static analysis is skipped for older PHP versions";
     else
       composer run-static-analysis;
     fi;
-  - if [ "$(phpenv version-name)" != "$LATEST_PHP_VERSION" ]; then
+  - if [ "$(version "$(phpenv version-name)")" -lt "$(version "$OLD_PHP_VERSION")" ]; then
       echo "Code style check is skipped for older PHP versions";
     else
       composer check-code-style;
     fi;
-  - if [ "$(phpenv version-name)" != "$LATEST_PHP_VERSION" ]; then
-      echo "Security check is skipped for older PHP versions";
-    else
-      composer check-security;
-    fi;
+  - symfony check:security;
   - composer run-tests-with-clover
 
 after_script:
